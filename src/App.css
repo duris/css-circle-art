@@ -1,38 +1,264 @@
-.App {
-  text-align: center;
+.wrapper{
+ width: 600px;
+ height: 600px;
+ margin: auto;
+ overflow:hidden;
+ position: absolute;
+ top:50%;
+ left:50%;
+ transform: translate(-50%, -50%);
+ border-radius: 20px;
+ box-shadow: 4px 10px 40px rgb(186, 186, 186);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100%;
+  background:linear-gradient(rgb(217, 37, 67), rgba(187, 0, 255, 0.5));
+  overflow: hidden;
+  top:50%;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+.circleWrapper {
+margin: auto;
+/* animation: rotation 5s infinite alternate-reverse; */
+position: relative;
+}
+.circleWrapper2{
+  rotate: 45deg;
+  animation: rotation 3s infinite alternate;
+}
+.circleWrapper3{
+  rotate: 90deg;
+  animation: rotation 6s infinite alternate;
+}
+.circleWrapper4{
+  transform: rotate(135deg) scaleX(-1);
+  rotate: 45deg;
+  animation: rotation2 9s infinite alternate;
+}
+
+.line1{
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  border-top:white;
+  left: 0;
+  top:50%;
+  transform: translateY(-50%);
+}
+.line2{
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  border-right:white;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+.circle1 {
+position: absolute;
+border:1px solid black;
+width: 100px;
+height: 100px;
+border-radius: 50%;
+top: 50%;
+transform: translateY(-50%);
+}
+/* .circleWrapper2 .circle1{
+  background-color: rgb(138, 43, 227, 50%);
+}
+.circleWrapper2 .circle2{
+  background-color: rgb(43, 226, 55, 50%);
+}
+.circleWrapper2 .circle3{
+  background-color: rgb(226, 43, 141, 50%);
+}
+.circleWrapper2 .circle4{
+  background-color: rgb(226, 153, 43, 50%);
+} */
+.circle2 {
+
+  position: absolute;
+  border:1px solid black;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translate(-100%,-50%);
+
+}
+.circle3 {
+  position: absolute;
+border:1px solid black;
+width: 100px;
+height: 100px;
+border-radius: 50%;
+top: 50%;
+transform: translateX(-50%)
+
+}
+.circle4 {
+  position: absolute;
+border:1px solid black;
+width: 100px;
+height: 100px;
+border-radius: 50%;
+top: 50%;
+transform: translate(-50%,-100%)
+
+}
+.circleWrapper2 .circle1,.circleWrapper2 .circle2,.circleWrapper2 .circle3,.circleWrapper2 .circle4{
+width: 100px;
+height: 100px;
+animation: move 2s alternate infinite;
+}
+
+@keyframes move {
+  from{
+    width: 100px;
+    height: 100px;
+    /* transform:  rotate(0deg) scaleX(1); */
+
+  } to {
+    width: 150px;
+    height: 150px;      
+
+  }
+}
+@keyframes rotation {
+  from{
+    /* rotate: 0deg; */
+    transform:  rotate(0deg) scaleX(1);
+  } to {
+    /* rotate: 45deg;    */
+    transform:  rotate(45deg) scaleX(-1);
+  }
+}
+
+@keyframes rotation2 {
+  from{
+    rotate: 45deg;
+    transform:  rotate(90deg) scaleX(1);
+  } to {
+    rotate: 0deg;   
+    transform:  rotate(135deg) scaleX(-1);
+  }
+}
+
+.verticleBar {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+}
+.horizontalBar{
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background-color: #ccc;
+  
+}
+
+.circle1{
+  background-color: rgba(255, 3, 213, 0.3);
+}
+.circle2{
+  background-color: rgba(36, 16, 250, 0.3);
+}
+.circle3{
+  background-color: rgba(241, 0, 0, 0.3);
+}
+.circle4{
+  background-color: rgba(119, 0, 255, 0.3);
+}
+.circle1,.circle2, .circle3, .circle4{
+  /* box-shadow: 0 0px 12px gray; */
+  border-color: white;
+}
+.mark1{
+margin-top: -25px;
+margin-left: 66px;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+background-color: black;
+width: 4px;
+height:4px;
+position: absolute;
+border-radius: 50%;
+}
+.mark2{
+  
+}
+
+.verticleBar{
+  margin-top: -1px;
+}
+.circleWrapper > .circle1,.circleWrapper > .circle2,.circleWrapper > .circle3,.circleWrapper > .circle4{
+  display: none;
+}
+
+.seedWrapper{  
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+.seedCircle1,.seedCircle2,.seedCircle3,.seedCircle4,.seedCircle5,.seedCircle6,.seedCircle7,.seedCircle8{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(0%, 0%);
+  border: 1px solid white;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  animation: rotateSeed 5s alternate infinite;
+}
+@keyframes rotateSeed {
   from {
-    transform: rotate(0deg);
+    transform:  rotate(0deg) scaleX(1);
+  } to {
+    transform:  rotate(90deg) scaleX(-1);
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.seedCircle1{
+  background: rgba(86, 103, 200, 0.4);
+}
+.seedCircle2{
+  top:-100px;
+  background: rgba(83, 233, 37, 0.4);
+}
+.seedCircle3{
+  left:87px;
+  top: 50px;
+  background: rgba(176, 53, 53, 0.4);
+}
+.seedCircle4{
+  left:-87px;
+  top: 50px;
+  background: rgba(33, 86, 221, 0.4);
+}
+.seedCircle5{
+  left:87px;
+  top: -50px;
+  background: rgba(230, 97, 35, 0.4);
+}
+.seedCircle6{
+  top:100px;
+  background: rgba(137, 179, 60, 0.4);
+}
+.seedCircle7{
+  left:-87px;
+  top: -50px;
+  background: rgba(166, 26, 198, 0.4);
+}
+.seedCircle8{
+  top:100px;
+  background: rgba(217, 27, 173, 0.4);
 }
